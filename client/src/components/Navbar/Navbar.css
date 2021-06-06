@@ -1,5 +1,6 @@
 #navbar {
   background-color: #109fb2;
+  height: auto;
 }
 
 .navbar-item {
@@ -9,6 +10,23 @@
   color: white;
 }
 
+.logo {
+  font-size: 20px;
+}
+
 #cart {
   float: right;
+}
+
+.cart-icon {
+  font-size: 20px;
+}
+
+#cartItem {
+  background-color: red;
+  padding: 0 2px;
+  border: 1px solid red;
+  border-radius: 50%;
+  font-size: 12px;
+  vertical-align: top;
 }
