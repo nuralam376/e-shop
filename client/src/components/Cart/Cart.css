@@ -1,0 +1,14 @@
+.cart-content {
+  float: right;
+  height: 100vh;
+}
+
+.cart-item-content {
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  color: white;
+}
+.cart-item-content img {
+  width: 50px;
+}
