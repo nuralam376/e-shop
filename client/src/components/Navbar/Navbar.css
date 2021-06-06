@@ -1,0 +1,14 @@
+#navbar {
+  background-color: #109fb2;
+}
+
+.navbar-item {
+  list-style: none;
+  display: inline-block;
+  padding: 20px;
+  color: white;
+}
+
+#cart {
+  float: right;
+}
