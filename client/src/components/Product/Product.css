@@ -1,0 +1,21 @@
+.count-item-cart {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #109fb2;
+}
+
+.count-item-cart button {
+  margin: 0px 20px;
+  padding: 5px;
+  background-color: black;
+  color: white;
+  border: none;
+  font-size: 20px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.count-item-cart p {
+  color: white;
+}
