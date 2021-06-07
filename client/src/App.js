@@ -8,10 +8,12 @@ export const CartContext = createContext();
 
 function App() {
   const [cartItems, setCartItems] = useState([]);
-  console.log(cartItems);
+  const [showCart, setShowCart] = useState(false);
   return (
     <div className="App">
-      <CartContext.Provider value={[cartItems, setCartItems]}>
+      <CartContext.Provider
+        value={[cartItems, setCartItems, showCart, setShowCart]}
+      >
         <Navbar />
         <Cart />
         <Products />

@@ -16,6 +16,7 @@
 
 #cart {
   float: right;
+  cursor: pointer;
 }
 
 .cart-icon {

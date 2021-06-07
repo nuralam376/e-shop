@@ -4,18 +4,20 @@ import CartItem from "../CartItem/CartItem";
 import "./Cart.css";
 
 const Cart = () => {
-  const [cartItems] = useContext(CartContext);
+  const [cartItems, , showCart] = useContext(CartContext);
 
   return (
-    <div className="cart-content">
-      {cartItems.length > 0 ? (
-        <div className="cart-item-content">
-          {cartItems.map((product) => (
-            <CartItem key={product.id} product={product} />
-          ))}
+    <>
+      {showCart && cartItems.length > 0 ? (
+        <div className="cart-content">
+          <div className="cart-item-content">
+            {cartItems.map((product) => (
+              <CartItem key={product.id} product={product} />
+            ))}
+          </div>
         </div>
       ) : null}
-    </div>
+    </>
   );
 };
 

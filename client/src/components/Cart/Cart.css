@@ -1,13 +1,21 @@
 .cart-content {
-  float: right;
-  height: 100vh;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .cart-item-content {
-  z-index: 1;
-  background-color: rgba(0, 0, 0, 0.5);
   padding: 20px;
   color: white;
+  width: 30%;
+  background-color: #f0f0f0;
+  margin: 0% 70%;
+  color: black;
 }
 .cart-item-content img {
   width: 50px;

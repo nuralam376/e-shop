@@ -1,0 +1,13 @@
+.cart-title {
+  float: left;
+}
+
+.closeMenu {
+  cursor: pointer;
+  font-size: 30px;
+  float: right;
+}
+
+.cart-items {
+  margin-top: 20px;
+}
