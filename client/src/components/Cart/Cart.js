@@ -4,10 +4,16 @@ import CartItem from "../CartItem/CartItem";
 import "./Cart.css";
 
 const Cart = () => {
-  const [cartItems, , showCart, setShowCart] = useContext(CartContext);
+  const [cartItems, setCartItems, showCart, setShowCart] =
+    useContext(CartContext);
 
   const hideCartMenu = () => {
     setShowCart(false);
+  };
+
+  const handleCheckout = () => {
+    console.log(cartItems);
+    setCartItems([]);
   };
 
   return (
@@ -46,7 +52,9 @@ const Cart = () => {
                   0
                 ) + 100}
               </h3>
-              <button className="cart-button">Proceed to Checkout</button>
+              <button className="cart-button" onClick={handleCheckout}>
+                Proceed to Checkout
+              </button>
             </div>
           </div>
         </div>

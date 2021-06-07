@@ -6,13 +6,19 @@ const Product = ({ product }) => {
   const { image, title, price } = product;
   const [cartItems, setCartItems] = useContext(CartContext);
   const [cartItem, setCartItem] = useState(null);
+  const [count, setCount] = useState(0);
 
   useEffect(() => {
     const cartItem = cartItems.find((cart) => cart.id === product.id);
     setCartItem(cartItem);
   }, [cartItems]);
 
-  const [count, setCount] = useState(0);
+  useEffect(() => {
+    if (cartItems.length === 0) {
+      setCount(0);
+      setCartItem(null);
+    }
+  }, [cartItems.length]);
 
   const setCart = (count) => {
     if (count === 0 && cartItem) {
