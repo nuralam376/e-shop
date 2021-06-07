@@ -10,14 +10,10 @@ const Product = ({ product }) => {
 
   useEffect(() => {
     const cartItem = cartItems.find((cart) => cart.id === product.id);
-    setCartItem(cartItem);
-  }, [cartItems.length]);
-
-  useEffect(() => {
-    if (cartItems.length === 0) {
+    if (!cartItem) {
       setCount(0);
       setCartItem(null);
-    }
+    } else setCartItem(cartItem);
   }, [cartItems.length]);
 
   const setCart = (count) => {
