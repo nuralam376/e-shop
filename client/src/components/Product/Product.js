@@ -1,16 +1,20 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { CartContext } from "../../App";
 import "./Product.css";
 
 const Product = ({ product }) => {
   const { image, title, price } = product;
   const [cartItems, setCartItems] = useContext(CartContext);
+  const [cartItem, setCartItem] = useState(null);
+
+  useEffect(() => {
+    const cartItem = cartItems.find((cart) => cart.id === product.id);
+    setCartItem(cartItem);
+  }, [cartItems]);
 
   const [count, setCount] = useState(0);
 
   const setCart = (count) => {
-    const cartItem = cartItems.find((cart) => cart.id === product.id);
-
     if (count === 0 && cartItem) {
       let allCarts = cartItems.filter((cart) => cart.id !== cartItem.id);
       setCartItems(allCarts);
@@ -60,7 +64,7 @@ const Product = ({ product }) => {
       ) : (
         <div className="count-item-cart">
           <button onClick={() => handleCount("substract")}>-</button>
-          <p>{count}</p>
+          <p>{cartItem && cartItem.quantity ? cartItem.quantity : count}</p>
           <button onClick={() => handleCount("add")}>+</button>
         </div>
       )}
