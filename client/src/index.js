@@ -5,7 +5,16 @@ import App from "./App";
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
 
-axios.defaults.baseURL = "http://localhost:5000/api";
+let url;
+if (process.env.NODE_ENV === "development") {
+  url = "http://localhost:5000/api";
+}
+
+if (process.env.NODE_ENV === "production") {
+  url = "";
+}
+
+axios.defaults.baseURL = url;
 
 ReactDOM.render(
   <React.StrictMode>

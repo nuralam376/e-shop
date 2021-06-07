@@ -11,7 +11,7 @@ const Product = ({ product }) => {
   useEffect(() => {
     const cartItem = cartItems.find((cart) => cart.id === product.id);
     setCartItem(cartItem);
-  }, [cartItems]);
+  }, [cartItems.length]);
 
   useEffect(() => {
     if (cartItems.length === 0) {

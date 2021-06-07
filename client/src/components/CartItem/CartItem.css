@@ -16,6 +16,7 @@
 .remove-cart-product {
   vertical-align: top;
   font-size: 20px;
+  cursor: pointer;
 }
 
 .cart-item-table td {

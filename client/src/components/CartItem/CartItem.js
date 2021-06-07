@@ -18,6 +18,11 @@ const CartItem = ({ product }) => {
     setCartItems(allCarts);
   };
 
+  const deleteCartItem = () => {
+    let updatedCarts = cartItems.filter((cart) => cart.id !== product.id);
+    setCartItems(updatedCarts);
+  };
+
   const handleCartQuantity = (e) => {
     let inputQuantity = e.target.value;
     if (inputQuantity > 100) return;
@@ -33,7 +38,9 @@ const CartItem = ({ product }) => {
           <tbody>
             <tr>
               <td>
-                <sup className="remove-cart-product">&times;</sup>
+                <sup className="remove-cart-product" onClick={deleteCartItem}>
+                  &times;
+                </sup>
                 <img src={image} alt={title} />
               </td>
               <td>

@@ -14,6 +14,7 @@ const Cart = () => {
   const handleCheckout = () => {
     console.log(cartItems);
     setCartItems([]);
+    alert("Your order has been placed!");
   };
 
   return (
