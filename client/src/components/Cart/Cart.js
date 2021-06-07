@@ -1,3 +1,4 @@
+import axios from "axios";
 import React, { useContext } from "react";
 import { CartContext } from "../../App";
 import CartItem from "../CartItem/CartItem";
@@ -11,10 +12,15 @@ const Cart = () => {
     setShowCart(false);
   };
 
-  const handleCheckout = () => {
-    console.log(cartItems);
-    setCartItems([]);
-    alert("Your order has been placed!");
+  const handleCheckout = async () => {
+    try {
+      await axios.post("/order", cartItems);
+      setCartItems([]);
+      setShowCart(false);
+      alert("Your order has been placed!");
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   return (
