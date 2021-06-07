@@ -1,19 +1,10 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import { CartContext } from "../../App";
 import CartItem from "../CartItem/CartItem";
 import "./Cart.css";
 
 const Cart = () => {
   const [cartItems, , showCart, setShowCart] = useContext(CartContext);
-  const [subTotal] = useState(
-    cartItems.reduce((sum, cart) => sum + cart.quantity * cart.price, 0)
-  );
-
-  console.log(
-    "cart",
-    cartItems.reduce((sum, cart) => sum + cart.quantity * cart.price, 0),
-    subTotal
-  );
 
   const hideCartMenu = () => {
     setShowCart(false);
