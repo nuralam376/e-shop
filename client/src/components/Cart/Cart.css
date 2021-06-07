@@ -24,3 +24,14 @@
 .cart-total {
   text-align: right;
 }
+
+@media screen and (max-width: 480px) {
+  .cart-content {
+    width: 100%;
+    position: relative;
+  }
+  .cart-item-content {
+    width: 70%;
+    margin: auto;
+  }
+}

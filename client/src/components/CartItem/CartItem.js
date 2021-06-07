@@ -22,10 +22,9 @@ const CartItem = ({ product }) => {
                 value={quantity}
                 className="cart-quantity"
               />
-              =
             </td>
             <td className="cart-total">
-              <br />৳{price * quantity}
+              <br /> = ৳{price * quantity}
             </td>
           </tr>
         </table>
