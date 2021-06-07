@@ -1,13 +1,28 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
+import { CartContext } from "../../App";
 import "./CartItem.css";
 
 const CartItem = ({ product }) => {
   const { image, title, price, quantity } = product;
   const [cartQuantity, setCartQuantity] = useState(quantity);
+  const [cartItems, setCartItems] = useContext(CartContext);
+
+  const updateCartItem = (inputQuantity) => {
+    const cartItem = cartItems.find((cart) => cart.id === product.id);
+    let allCarts = cartItems.map((cart) => {
+      if (cart.id === cartItem.id) {
+        cart.quantity = inputQuantity;
+      }
+      return cart;
+    });
+    setCartItems(allCarts);
+  };
 
   const handleCartQuantity = (e) => {
-    if (e.target.value > 100) return;
-    setCartQuantity(e.target.value);
+    let inputQuantity = e.target.value;
+    if (inputQuantity > 100) return;
+    setCartQuantity(inputQuantity);
+    updateCartItem(inputQuantity);
   };
 
   return (
