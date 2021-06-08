@@ -6,12 +6,11 @@ exports.postOrder = async (req, res) => {
   try {
     const order = await Order.create();
 
-    order.addProducts(
-      products.map((product) => {
-        product.orderItem = { quantity: product.quantity };
-        return product;
-      })
-    );
+    for (let product of products) {
+      await order.addProduct(product.id, {
+        through: { quantity: product.quantity },
+      });
+    }
     return res.json({ message: "Order Saved" });
   } catch (err) {
     console.log("err", err);
