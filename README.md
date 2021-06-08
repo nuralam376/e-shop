@@ -4,17 +4,18 @@
 
 You will need node and npm installed globally on your machine.
 
-Build Setup..
-Before proceeding, create a .env file and configure your environment variables within .env..
+Before proceeding, create a .env file and configure your environment variables within .env.
 
 Create a database named e-shop and provide your database username and password in the .env file
 
 ## .env
 
-...DB_HOST=localhost
-...DB_USER=""
-...DB_PASS=""
-...DB_NAME="e-shop"
+```
+DB_HOST=localhost
+DB_USER=""
+DB_PASS=""
+DB_NAME="e-shop"
+```
 
 ## install dependencies
 
@@ -22,7 +23,19 @@ $ npm install
 
 ## To Start Server:
 
+go to the server folder
+
+$ cd server
 $ node app.js
+
+## To Visit App:
+
+localhost:5000
+
+### APIS
+
+Get Products - localhost:5000/api/products
+Save Order - localhost:5000/api/order
 
 # Installation and Setup Instructions for frontend
 
@@ -34,6 +47,9 @@ $ npm install
 
 ## To Start Server:
 
+go to the client folder
+
+$ cd client
 $ npm start
 
 ## To Visit App:
