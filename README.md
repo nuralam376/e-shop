@@ -19,14 +19,21 @@ DB_NAME="e-shop"
 
 ## install dependencies
 
+go to the server folder
+
+```
+$ cd server
+```
+
+```
 $ npm install
+```
 
 ## To Start Server:
 
-go to the server folder
-
-$ cd server
+```
 $ node app.js
+```
 
 ## To Visit App:
 
@@ -34,8 +41,13 @@ localhost:5000
 
 ### APIS
 
+```
 Get Products - localhost:5000/api/products
+```
+
+```
 Save Order - localhost:5000/api/order
+```
 
 # Installation and Setup Instructions for frontend
 
@@ -43,14 +55,21 @@ You will need node and npm installed globally on your machine.
 
 ## Install dependencies
 
+go to the client folder.
+
+```
+$ cd client
+```
+
+```
 $ npm install
+```
 
 ## To Start Server:
 
-go to the client folder
-
-$ cd client
+```
 $ npm start
+```
 
 ## To Visit App:
 
