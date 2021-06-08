@@ -11,10 +11,10 @@ if (process.env.NODE_ENV === "development") {
 }
 
 if (process.env.NODE_ENV === "production") {
-  url = "";
+  url = "https://e-shop10.herokuapp.com/";
 }
 
-axios.defaults.baseURL = url;
+axios.defaults.baseURL = "https://e-shop10.herokuapp.com/";
 
 ReactDOM.render(
   <React.StrictMode>
